@@ -17,7 +17,6 @@ Sistema completo di monitoraggio OEE (Overall Equipment Effectiveness) con anoma
 │  Alert System    │
 │  + Predictions   │
 └──────────────────┘
-Copy
 
 ## Funzionalità
 
