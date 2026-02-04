@@ -1,6 +1,6 @@
 # 📊 Robot Efficiency Analytics Suite
 
-Piattaforma di analisi predittiva per celle robotiche ABB - Industry 4.0 ready.
+Piattaforma di analisi predittiva per celle robotiche ABB - Industry 4.0
 
 ## Panoramica
 
