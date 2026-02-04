@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Efficiency Analytics - Industry 4.0</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .content {
+            padding: 30px;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .kpi-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .kpi-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .kpi-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .alert-section {
+            margin: 30px 0;
+        }
+        .alert {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+        .alert-critical {
+            background: #ffebee;
+            border-color: #f44336;
+            color: #c62828;
+        }
+        .alert-warning {
+            background: #fff3e0;
+            border-color: #ff9800;
+            color: #ef6c00;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .chart-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #2a5298;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .badge-success { background: #4caf50; color: white; }
+        .badge-warning { background: #ff9800; color: white; }
+        .badge-danger { background: #f44336; color: white; }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Robot Efficiency Analytics</h1>
+            <p>Dashboard Industry 4.0 - Analisi Predittiva Celle Robotiche ABB</p>
+            <p>Generato il 03/02/2026 20:53</p>
+        </div>
+        
+        <div class="content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">OEE Medio Impianto</div>
+                    <div class="kpi-value">80.7%</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Produzione Totale</div>
+                    <div class="kpi-value">176,919</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Tempo Fermo Totale</div>
+                    <div class="kpi-value">21736m</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Alert Attivi</div>
+                    <div class="kpi-value">0</div>
+                </div>
+            </div>
+            
+            <div class="alert-section">
+                <h2>🚨 Sistema Alert Predittivo</h2>
+                <div class="alert alert-warning">⚠️ <strong>ABB_004</strong> - Efficienza: Efficienza sotto la media (Valore: 72.3, Soglia: 75)</div><div class="alert alert-warning">⚠️ <strong>ABB_004</strong> - Efficienza: Efficienza sotto la media (Valore: 72.3, Soglia: 75)</div>
+            </div>
+            
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h3>Andamento OEE</h3>
+                    <img src="oee_trend.png" alt="OEE Trend">
+                </div>
+                <div class="chart-card">
+                    <h3>Benchmark Performance</h3>
+                    <img src="efficiency_comparison.png" alt="Comparison">
+                </div>
+                <div class="chart-card">
+                    <h3>Analisi Correlazioni</h3>
+                    <img src="correlation_heatmap.png" alt="Heatmap">
+                </div>
+                <div class="chart-card">
+                    <h3>Predizione Manutenzione</h3>
+                    <img src="maintenance_forecast.png" alt="Maintenance">
+                </div>
+            </div>
+            
+            <h2>📊 Tabella Performance Dettagliata</h2>
+            <table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>robot_id</th>
+      <th>pezzi_prodotti</th>
+      <th>tempo_fermo_minuti</th>
+      <th>errori_collisione</th>
+      <th>consumo_energia_kwh</th>
+      <th>efficienza_oee</th>
+      <th>temperatura_motore_c</th>
+      <th>ranking</th>
+      <th>costo_pezzo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ABB_001</td>
+      <td>47449</td>
+      <td>4188</td>
+      <td>3</td>
+      <td>2791.25</td>
+      <td><span class="badge badge-success">86.15%</span></td>
+      <td>54.5</td>
+      <td>2.0</td>
+      <td>0.06</td>
+    </tr>
+    <tr>
+      <td>ABB_002</td>
+      <td>43670</td>
+      <td>5475</td>
+      <td>11</td>
+      <td>2731.00</td>
+      <td><span class="badge badge-warning">79.32%</span></td>
+      <td>54.7</td>
+      <td>3.0</td>
+      <td>0.06</td>
+    </tr>
+    <tr>
+      <td>ABB_003</td>
+      <td>50041</td>
+      <td>2431</td>
+      <td>0</td>
+      <td>2745.15</td>
+      <td><span class="badge badge-success">91.58%</span></td>
+      <td>51.2</td>
+      <td>1.0</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <td>ABB_004</td>
+      <td>35759</td>
+      <td>9642</td>
+      <td>46</td>
+      <td>2752.15</td>
+      <td><span class="badge badge-danger">65.57%</span></td>
+      <td>57.7</td>
+      <td>4.0</td>
+      <td>0.08</td>
+    </tr>
+  </tbody>
+</table>
+            
+            <h2>🔮 Predictive Maintenance</h2>
+            <table>
+                <tr><th>Robot</th><th>Giorni alla Manutenzione</th><th>Stato</th></tr>
+                <tr><td>ABB_001</td><td>N/A gg</td><td><span class='badge badge-success'>Stabile</span></td></tr><tr><td>ABB_002</td><td>N/A gg</td><td><span class='badge badge-success'>Stabile</span></td></tr><tr><td>ABB_003</td><td>N/A gg</td><td><span class='badge badge-success'>Stabile</span></td></tr><tr><td>ABB_004</td><td>N/A gg</td><td><span class='badge badge-success'>Stabile</span></td></tr>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>Strumento sviluppato con Python, Pandas, Scikit-learn | Applicazione Industry 4.0</p>
+        </div>
+    </div>
+</body>
+</html>
+        
