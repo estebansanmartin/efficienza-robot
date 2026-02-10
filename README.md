@@ -64,6 +64,18 @@ Opzione B: Da API SCADA
 df = fetch_scada_data(start_date, end_date)
 ```
 
+Rinomina colonne se necessario
+```
+df = df.rename(columns={
+    'Robot': 'robot_id',
+    'DataOra': 'data',
+    'Pezzi': 'pezzi_prodotti',
+    'FermoMin': 'tempo_fermo_minuti',
+    'TempMot': 'temperatura_motore_c'
+    # ... altre colonne
+})
+```
+
 ## Output
 
 oee_trend.png	Grafico	    Andamento OEE 30 giorni per robot <br>
